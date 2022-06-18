@@ -1,11 +1,19 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../auth/context/AuthContext';
 
 export const LoginScreen = () => {
 
+  const { login } = useContext( AuthContext );
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    navigate('/marvel', {
+
+    const lastPath = localStorage.getItem( 'lastPath' ) || '/';
+
+    login( 'Rocas' );
+
+    navigate( lastPath, {
       replace: true
     });
   };

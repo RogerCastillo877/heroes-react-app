@@ -9,4 +9,4 @@ export const PublicRoute = ({ children }) => {
   return ( logged )
     ? <Navigate to="/marvel" />
     : children
-}
+};

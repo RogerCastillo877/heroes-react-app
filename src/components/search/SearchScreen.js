@@ -34,7 +34,7 @@ export const SearchScreen = () => {
           <h4>Buscar</h4>
           <hr />
 
-          <form onSubmit={ handleSearch }>
+          <form onSubmit={ handleSearch } aria-label= "form">
             <input
               type='text'
               placeholder='Buscar un héroe'
@@ -60,7 +60,7 @@ export const SearchScreen = () => {
           {
             ( q === '' )
             ? <div className='alert alert-info'>Buscar un héroe</div>
-            : ( heroesFilted.length === 0 ) && <div className='alert alert-danger'>No hay resultados: { q }</div>
+            : ( heroesFilted.length === 0 ) && <div className='alert alert-danger' aria-label='alert-danger'>No hay resultados: { q }</div>
           }
           {
             heroesFilted.map( hero => (
